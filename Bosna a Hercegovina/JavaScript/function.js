@@ -86,7 +86,18 @@ const obrazkyText = [{
     "id": "5"
 }
 ];
+const SubText = [{
+    "text": "Bosna a Hercegovina je domovem tří národů, mezi které patří Bosňáci, Srbové a Chorvati, plus několik menších skupin, včetně Židů a Romů. Sčítání lidu roku 2013 ukázalo, že Bosnu a Hercegovinu obývá 50,1 % Bosňáků, 30,8 % Srbů, 15,4 % Chorvatů a 2,7 % ostatních."
+},
+{
+    "text": "Bosenština, srbština a chorvatština jsou v současné Bosně a Hercegovině uznávány jako rovnoprávné oficiální jazyky. Rozdíly v mluvené formě jsou nepatrné. Mluvčí tří daných jazyků si navzájem rozumějí, jazyky jsou dohromady známé jako srbochorvatština. Užívání jednoho z nich se stalo znakem etnické identity. Bosenština a srbština se píší latinkou i cyrilicí, zatímco chorvatština jen latinkou."
+},
+{
+    "text": "V Bosně a Hercegovině převažuje islám, který vyznává 51% populace a většina patří k sunnitům, 46% populace jsou křesťané, z nichž nejvíce přísluší k srbské pravoslavné církvi, což představuje 31% populace. Po nich následuje římskokatolická církev s 15%, agnostici tvoří 0,3%, ateisté 0,8% a ostatní 1,15%."
+}
+]
 
+let bOnce = false;
 let previous = 0;
 let current = null;
 
@@ -95,21 +106,30 @@ $(function () {
         // $("html body").animate({scrollTop: window.scrollY + 1080});
         $("html body").scrollTop(window.scrollY + 1080);
     });
+    
+    /* Show interactive map */
+    $("#map").click(function () {
+        if (!bOnce) {
+            $("#map div").append('<img src="img/Map_Bih.png" alt="Map_Bih">');
+            //$("#map").animate({height: "300px"});
+            bOnce = true;
+        }
+    });
 
     $("#skupiny").click(function () {
-        $("#texty").text(text[0].text);
+        $("#texty").text(SubText[0].text);
     });
     $("#jazyk").click(function () {
-        $("#texty").text(text[1].text);
+        $("#texty").text(SubText[1].text);
     });
     $("#vira").click(function () {
-        $("#texty").text(text[2].text);
+        $("#texty").text(SubText[2].text);
     });
 /*
     $("#coin").mouseover(function () {});
     $("#coin").mouseout(function () {});
 */
-    // Draw a circle and lines on the canvas to create a time axis
+    /* Draw a line on the canvas to create a visual time axis */
     $('canvas').drawLine({
         layer: 'time',
         strokeStyle: '#000',
@@ -121,6 +141,7 @@ $(function () {
         x2: 1520,
         y2: 60,
     })
+    /* Draw 8 circle on a line to create 8 points to show history events */
     for (let i = 0; i < 8; i++) {
         $('canvas').drawArc({
             layer: 'time',
@@ -150,6 +171,7 @@ $(function () {
         });
     }
 
+    /* Show info about people from history */
     $("#osobnosti img").mouseover(function () {
         current = $(this);
 
@@ -158,10 +180,8 @@ $(function () {
             if (current[0].alt == e.title) {
                 $(`#osobnosti p:eq(${e.id})`).text(e.text);
                 $(`#osobnosti p:eq(${e.id})`).prepend(`<h2>${e.title}</h2>`);
-            } /*else {
-                $(`#osobnosti p:eq(${e.id})`).text("");
-                $(`#osobnosti h2:eq(${e.id})`).text("");
-            }*/
+            }
         });
     });
+
 });
