@@ -1,0 +1,90 @@
+h1 {
+    text-align: center;
+    font-size: 150px;
+    font-weight: bold;
+    color:rgb(255,204,0);
+    background-color: rgb(0, 0, 160);
+    margin-top: 20%;
+}
+
+h2 {
+    text-align: center;
+    font-size: 64px;
+    color:rgb(255,204,0);
+    background-color: rgb(0, 0, 160);
+    width: 100%;
+    padding: 0.5em;
+}
+
+h3 {
+    text-align: center;
+    font-size: 40px;
+    color:rgb(255,204,0);
+    background-color: rgb(0, 0, 160);
+}
+
+button {
+    padding: 10px 50px;
+    text-align: center;
+    font-size: 40px;
+    color:rgb(255,204,0);
+    background-color: rgb(0, 0, 160);  
+}
+
+p {
+    font-size: 42px;
+    color: black;
+    margin: 20px 0px;
+}
+
+.jumbotron {
+    background-color: rgb(0, 0, 160);
+    color:rgb(255,204,0);
+    margin-bottom: 0px;
+    font-size: 25px;
+    text-align: center;
+    height: 1080px;
+}
+
+.align {
+    margin: 0px 100px;
+}
+
+body {
+   background-color:rgb(212, 231, 255);
+}
+
+footer {
+    background-color: rgb(0, 0, 160);
+    color:rgb(255,204,0);
+    text-align: center;
+    font-size: 20px;
+}
+
+#vlajka {
+    background-repeat: no-repeat;
+    width: 250px;
+}
+
+#znak {
+    background-repeat: no-repeat;
+    width: 200px;
+}
+
+#maglic {
+    width: 100%;
+}
+
+#marka {
+    width: 100%;
+}
+
+#coin {
+    width: 80%;
+    margin-left: 10px;
+}
+
+thead tr th {
+    text-align: center;
+    width: 150px;
+}
