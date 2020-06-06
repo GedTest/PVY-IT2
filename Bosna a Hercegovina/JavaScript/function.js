@@ -100,22 +100,27 @@ const SubText = [{
 let bOnce = false;
 let previous = 0;
 let current = null;
+let viewportSize = 1720 
 
 $(function () {
     $("img.sipka").click(function () {
-        // $("html body").animate({scrollTop: window.scrollY + 1080});
-        $("html body").scrollTop(window.scrollY + 1080);
+        // $("html body").animate({scrollTop: window.scrollY + 1080});  // not working in chrome (I am using Microsoft Edge)
+        $("html body").scrollTop(window.scrollY + 1080);                // not working in chrome (I am using Microsoft Edge)
+    });
+
+    $('img.sipka').mouseover(function(){
+        $('img.sipka').slideUp();
     });
     
     /* Show interactive map */
     $("#map").click(function () {
         if (!bOnce) {
             $("#map div").append('<img src="img/Map_Bih.png" alt="Map_Bih">');
-            //$("#map").animate({height: "300px"});
             bOnce = true;
         }
     });
 
+    /* Show text under a buttons */
     $("#skupiny").click(function () {
         $("#texty").text(SubText[0].text);
     });
@@ -125,10 +130,15 @@ $(function () {
     $("#vira").click(function () {
         $("#texty").text(SubText[2].text);
     });
-/*
-    $("#coin").mouseover(function () {});
-    $("#coin").mouseout(function () {});
-*/
+
+    /* Flip the coin */
+    $("#coin").mouseover(function () {
+        $('#coin img').attr("src","img/20fening back.png");
+    });
+    $("#coin").mouseout(function () {
+        $('#coin img').attr("src","img/20fening front.png");  
+    });
+
     /* Draw a line on the canvas to create a visual time axis */
     $('canvas').drawLine({
         layer: 'time',
@@ -141,12 +151,13 @@ $(function () {
         x2: 1520,
         y2: 60,
     })
+
     /* Draw 8 circle on a line to create 8 points to show history events */
     for (let i = 0; i < 8; i++) {
         $('canvas').drawArc({
             layer: 'time',
             fillStyle: 'blue',
-            x: 25 + (i * 215),
+            x: 25 + (i * (viewportSize/8)),
             y: 60,
             radius: 25,
             mouseover: function (layer) {
