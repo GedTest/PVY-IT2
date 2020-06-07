@@ -40,53 +40,90 @@ const cities = [{
     }
 ];
 const sights = [{
-
-}];
+        "id": "kostel",
+        "img": "img/kostel.jpg",
+        "text": "Srbský ortodoxní klášter Hercegovačka Gračanica se nachází na kopci Crkvina nad Trebinje a nabízí nádherný výhled na město a představuje jeden z nejkrásnějších klášterů ve východní Hercegovině. Od roku 2000 je zde pochován věhlasný srbský básník Jovan Dučić, na zdi kláštera má pamětní desku s úryvkem z jedné z jeho básni.",
+    },
+    {
+        "id": "hora",
+        "img": "img/Maglić.jpg",
+        "text": "Bosanski Maglić je s výškou 2386 m. n. m. nejvyšší horou Bosny a Hercegoviny. Leží v Republice srbské, na jihovýchodě území státu při hranici s Černou Horou. Na vrcholu se nachází kamenný válcový sloup a kovová vlajka v červeno-modro-bílé barvě. Na stožáru vlajky je umístěna vrcholová kniha. Je zde také pamětní deska z roku 1973 na počest jugoslávských partyzánů, kteří v červnu 1943 bojovali v údolí Sutjesky proti fašistickým vojskům.",
+    },
+    {
+        "id": "hrad",
+        "img": "img/Ostrožac_hrad.jpg",
+        "text": "Hrad Ostrožac se nachází v Bosně a Hercegovině v kantonu Una-Sana těsně mimo město Cazin, nedaleko obce Ostrožac. Hrad se datuje do 13. století, kdy byl Ostrozac součástí majetku šlechtického domu Babonic v chorvatském království. Po roce 1592, byl dobyt Turky",
+    },
+    {
+        "id": "mlyny",
+        "img": "img/MlynyPliva.jpg",
+        "text": "Dále po proudu řeky Plivy jsou postaveny malinkaté vodní mlýny. V dřívějších dobách se série vodních mlýnů používala místními farmáři za dob Rakouska-Uherska. Dnes již slouží jen jako atrakce pro turisty.",
+    },
+    {
+        "id": "vodopad",
+        "img": "img/PlivaVodopad.jpg",
+        "text": "Řeka Pliva vtéká do města Jajce a přímo v centru města vytváří při soutoku 27m vysoký vodopád.",
+    },
+    {
+        "id": "Bascarsija",
+        "img": "img/Baščaršija.jpg",
+        "text": "Baščaršija v centru Sarajeva je starý bazar z osmanských dob a hlavní turistické lákadlo města. Čtvrť vznikla v druhé polovině 15. století, když 'Isa-beg Ishaković' zakládal město Sarajevo. Pojmenování Baščaršija vychází ze slov baš – hlavní a čaršija – tržiště. Nachází se zde několik vzácných staveb, například mešita a bezistan Gazi Husrev-bega, Morića han a Hodinová věž.",
+    },
+    {
+        "id": "NP_Sutjeska",
+        "img": "img/Sutjeska.jpg",
+        "text": "Národní park Sutjeska je nejstarší národní park v Bosně a Hercegovině založen v roce 1965. Rozprostírá se na území o rozloze 175 km², nejbližším větším městem je Foča. Součástí parku je například prales Perućica, či horský masiv Maglić včetně vrcholu Bosanski Maglić, který je s výškou 2386 m n. m nejvyšším bodem země. Řeka Sutjeska, podle níž je park pojmenovaný, vyhloubila kaňon přímo jeho středem. Velké části parku jsou relativně odlehlé, bez znatelných lidských zásahů. I proto jeho území za druhé světové války sloužilo také jako útočiště partyzánům.",
+    },
+    {
+        "id": "stecci",
+        "img": "img/Stecci.png",
+        "text": "Stećak (mn.č. stećci) je středověký náhrobní kámen na západním Balkáně. Jeho pojmenování je z praslovanského „stojati“ - státi. Většina náhrobků má původ v období předotomanském bosenském království (1377–1463). Nacházejí se především v oblasti Hercegoviny, ale i v okolních státech (Srbsko, Černá Hora, Chorvatsko). Jsou spjaty především s bosenskou církví, ale i bogomilstvím, nápisy jsou v bosenské cyrilici nebo zdobeny reliéfy.  Odhaduje se, že v celém regionu se nachází až 60 000 náhrobních kamenů. V roce 2016 bylo na seznam světového kulturního dědictví UNESCO zapsáno 30 lokalit těchto středověkých nekropolí. 22 míst se nachází v Bosně a Hercegovině, 3 v Černé Hoře, 3 v Srbsku a 2 v Chorvatsku."
+    }
+];
 
 $(function () {
-    let current = {
-        id: null,
-        city: null,
-        sight: null,
-        findId: function () {
-            this.id = $(this).attr('id');
-        },
-        findCity: function () {
-            this.city = cities.find(item => {
-                return item.id === this.id
-            });
-        }
-    };
     $('svg').hide();
     $('#map').click(function () {
         $('svg').toggle();
     });
-    
+
     $('svg .kraj').mouseover(function () {
         styles = $(this).css('fill');
         $(this).css('fill', 'white');
-    })
+    });
+
+    /* Show info about sights */
     $('svg .triangle').mouseover(function () {
         styles = $(this).css('fill');
         $(this).css('fill', 'yellow');
-    })
+
+        let id = $(this).attr('id');
+        let sight = sights.find(item => {
+            return item.id === this.id
+        });
+        $('#info p').text(sight.text);
+        $('#info img').attr('style','width: 100%;');
+        $('#info img').attr('src', sight.img);
+    });
     $('svg path').mouseout(function () {
         $(this).css('fill', styles);
     });
 
     /* Show info about current city */
-       $('svg ellipse').mouseover(function () {
-           styles = $(this).css('fill');
-           $(this).css('fill', 'yellow');
-           let id = $(this).attr('id');
-           let city = cities.find(item => {
+    $('svg ellipse').mouseover(function () {
+        styles = $(this).css('fill');
+        $(this).css('fill', 'yellow');
+
+        let id = $(this).attr('id');
+        let city = cities.find(item => {
             return item.id === this.id
         });
-           $('#info p').text(city.text);
-           $('#info img').attr('src',city.img);
-       });
-    
-        $('svg ellipse').mouseout(function () {
-            $(this).css('fill', styles);
-        })
+        $('#info p').text(city.text);
+        $('#info img').attr('style','margin-left: 33%;');
+        $('#info img').attr('src', city.img);
+    });
+
+    $('svg ellipse').mouseout(function () {
+        $(this).css('fill', styles);
+    });
 });

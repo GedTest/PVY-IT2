@@ -23,9 +23,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.9899495"
-     inkscape:cx="423.8965"
-     inkscape:cy="494.53494"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="419.25899"
+     inkscape:cy="427.61274"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -365,7 +365,7 @@
        d="m 140.13467,171.31771 -2.53686,-4.39398 -2.53686,-4.39397 5.07372,0 5.07373,0 -2.53686,4.39397 z"
        inkscape:transform-center-x="-3.0281176e-06"
        inkscape:transform-center-y="1.4015454"
-       transform="matrix(0.89011431,0,0,0.95690733,-7.9248504,24.323721)"
+       transform="matrix(0.89011431,0,0,0.95690733,-108.68546,-78.575047)"
        inkscape:label="triangle">
       <title
          id="title110">Hrad Ostrozac</title>
@@ -413,6 +413,72 @@
        inkscape:label="triangle">
       <title
          id="title116">Plivski vodopad</title>
+    </path>
+    <path
+       sodipodi:type="star"
+       style="fill:#000080;stroke:#ffffff;stroke-width:0.264583"
+       id="NP_Sutjeska"
+       sodipodi:sides="3"
+       sodipodi:cx="154.35201"
+       sodipodi:cy="197.83154"
+       sodipodi:r1="5.8814483"
+       sodipodi:r2="2.9407239"
+       sodipodi:arg1="1.548073"
+       sodipodi:arg2="2.5952705"
+       inkscape:flatsided="false"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 154.48564,203.71147 -2.64631,-4.35208 -2.64631,-4.35208 5.09217,-0.11573 5.09217,-0.11573 -2.44586,4.46781 z"
+       inkscape:transform-center-x="-0.0054392222"
+       inkscape:transform-center-y="1.3030219"
+       transform="matrix(0.88234112,0.02174762,-0.02190208,0.88860789,21.863474,18.323653)"
+       inkscape:label="NP_Sutjeska">
+      <title
+         id="title75">Narodni_park_Sutjeska</title>
+    </path>
+    <path
+       sodipodi:type="star"
+       style="fill:#000080;stroke:#ffffff;stroke-width:0.264583"
+       id="Bascarsija"
+       sodipodi:sides="3"
+       sodipodi:cx="129.55447"
+       sodipodi:cy="165.31143"
+       sodipodi:r1="6.4765606"
+       sodipodi:r2="3.2382803"
+       sodipodi:arg1="1.5515252"
+       sodipodi:arg2="2.5987227"
+       inkscape:flatsided="false"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 129.67928,171.78679 -2.89752,-4.80248 -2.89751,-4.80247 5.60782,-0.10809 5.60783,-0.10808 -2.71031,4.91056 z"
+       inkscape:transform-center-x="0.010527987"
+       inkscape:transform-center-y="1.345005"
+       transform="matrix(0.80765491,0.01186859,-0.01231498,0.83803157,37.54289,25.993485)"
+       inkscape:label="Bascarsija">
+      <title
+         id="title79">Bascarsija_trh</title>
+    </path>
+    <path
+       sodipodi:type="star"
+       style="fill:#000080;stroke:#ffffff;stroke-width:0.264583"
+       id="stecci"
+       sodipodi:sides="3"
+       sodipodi:cx="110.9207"
+       sodipodi:cy="236.31834"
+       sodipodi:r1="10.421315"
+       sodipodi:r2="5.2106576"
+       sodipodi:arg1="1.4148136"
+       sodipodi:arg2="2.4620111"
+       inkscape:flatsided="false"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 112.53966,246.61314 -5.672,-7.02007 -5.67199,-7.02006 8.91555,-1.40206 8.91555,-1.40206 -3.24355,8.42212 z"
+       inkscape:transform-center-x="-0.052714424"
+       inkscape:transform-center-y="1.3363862"
+       transform="matrix(0.49319995,0.09318167,-0.08780194,0.5234189,83.890061,96.503651)"
+       inkscape:label="Stećci">
+      <title
+         id="title83">Stećci</title>
     </path>
   </g>
 </svg>

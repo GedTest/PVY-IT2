@@ -131,13 +131,20 @@ $(function () {
         $("#texty").text(SubText[2].text);
     });
 
-    /* Flip the coin */
+    /* Flip the coins */
     $("#coin").mouseover(function () {
         $('#coin img').attr("src","img/20fening back.png");
     });
     $("#coin").mouseout(function () {
         $('#coin img').attr("src","img/20fening front.png");  
     });
+    $("#100MK").mouseover(function () {
+        $('#100MK img').attr("src","img/100 konvertibilni marka back.jpg");
+    });
+    $("#100MK").mouseout(function () {
+        $('#100MK img').attr("src","img/100 konvertibilni marka.jpg");  
+    });
+
 
     /* Draw a line on the canvas to create a visual time axis */
     $('canvas').drawLine({
