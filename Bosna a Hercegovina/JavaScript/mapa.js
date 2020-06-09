@@ -189,7 +189,7 @@ $(function () {
         });
         $(this).css('fill', 'white');
 
-        $('#canton p').text(canton.title);
+        $('#canton p').text(`Kanton: ${canton.title}`);
         $('#canton img').attr('src',canton.img);
     });
 

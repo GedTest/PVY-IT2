@@ -15,7 +15,20 @@
    inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
    sodipodi:docname="Interaktivni_mapa_BiH.svg">
   <defs
-     id="defs2" />
+     id="defs2">
+    <rect
+       x="22.989033"
+       y="224.29123"
+       width="35.012308"
+       height="12.027129"
+       id="rect91" />
+    <rect
+       x="22.217888"
+       y="200.90514"
+       width="52.621433"
+       height="13.229848"
+       id="rect85" />
+  </defs>
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -25,7 +38,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
      inkscape:cx="419.25899"
-     inkscape:cy="427.61274"
+     inkscape:cy="468.01884"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -480,5 +493,42 @@
       <title
          id="title83">Stećci</title>
     </path>
+    <path
+       sodipodi:type="star"
+       style="fill:#000080;stroke:#ffffff;stroke-width:0.264583"
+       id="path79"
+       sodipodi:sides="3"
+       sodipodi:cx="15.505485"
+       sodipodi:cy="204.78055"
+       sodipodi:r1="7.7508163"
+       sodipodi:r2="3.8754082"
+       sodipodi:arg1="1.5707963"
+       sodipodi:arg2="2.6179939"
+       inkscape:flatsided="false"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 15.505485,212.53136 -3.356202,-5.81311 -3.3562024,-5.81311 6.7124044,0 6.712403,0 -3.356202,5.81311 z"
+       inkscape:transform-center-y="1.9377024" />
+    <circle
+       style="fill:#0000ff;stroke:#ffffff;stroke-width:0.226059"
+       id="path81"
+       cx="15.795074"
+       cy="228.05531"
+       r="5.3869705" />
+    <text
+       xml:space="preserve"
+       id="Pamatka"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect85);fill:#000000;fill-opacity:1;stroke:none;"
+       transform="translate(5.3453906,-0.26726953)"><tspan
+         x="22.21875"
+         y="210.55976"><tspan>Památka</tspan></tspan></text>
+    <text
+       inkscape:label="Mesto"
+       xml:space="preserve"
+       id="Mesto"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect91);fill:#000000;fill-opacity:1;stroke:none;"
+       transform="translate(10.423512,-0.80180859)"><tspan
+         x="22.988281"
+         y="233.94648"><tspan>Město</tspan></tspan></text>
   </g>
 </svg>
