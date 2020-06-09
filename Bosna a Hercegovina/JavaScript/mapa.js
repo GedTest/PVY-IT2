@@ -80,6 +80,99 @@ const sights = [{
         "text": "Stećak (mn.č. stećci) je středověký náhrobní kámen na západním Balkáně. Jeho pojmenování je z praslovanského „stojati“ - státi. Většina náhrobků má původ v období předotomanském bosenském království (1377–1463). Nacházejí se především v oblasti Hercegoviny, ale i v okolních státech (Srbsko, Černá Hora, Chorvatsko). Jsou spjaty především s bosenskou církví, ale i bogomilstvím, nápisy jsou v bosenské cyrilici nebo zdobeny reliéfy.  Odhaduje se, že v celém regionu se nachází až 60 000 náhrobních kamenů. V roce 2016 bylo na seznam světového kulturního dědictví UNESCO zapsáno 30 lokalit těchto středověkých nekropolí. 22 míst se nachází v Bosně a Hercegovině, 3 v Černé Hoře, 3 v Srbsku a 2 v Chorvatsku."
     }
 ];
+const cantons = [
+{
+    "title":"Západní Bosna",
+    "id":"Zapadni_Bosna",
+    "img":"img/Flags/zapadniBosnaSymbol.png",
+},
+{
+    "title":"Una-Sana",
+    "id":"Una-Sana",
+    "img":"img/Flags/una-sanaFlag.png",
+},
+{
+    "title":"Střední Bosna",
+    "id":"Stredni_Bosna",
+    "img":"img/Flags/stredniBosnaFlag.png",
+},
+{
+    "title":"Západní Hercegovina",
+    "id":"Zapadni_Hercegovina",
+    "img":"img/Flags/WesternHerzegovinaFlag.png",
+},
+{
+    "title":"Hercegovina-Neretva",
+    "id":"Hercegovina-Neretva",
+    "img":"img/Flags/Herzegovina-NeretvaFlag.png",
+},
+{
+    "title":"Tuzla",
+    "id":"Tuzla",
+    "img":"img/Flags/TuzlaFlag.gif",
+},
+{
+    "title":"Zenica-Doboj",
+    "id":"Zenica-Doboj",
+    "img":"img/Flags/Zenica-DobojFlag.gif",
+},
+{
+    "id":"Sarajevo",
+    "title":"Sarajevo",
+    "id":"Sarajevo",
+    "img":"img/Flags/sarajevoFlag.gif",
+},
+{
+    "title":"Bosenské podrinje",
+    "id":"Bosenske_podrinje",
+    "img":"img/Flags/BosnianPodrinjeFlag.png",
+},
+{
+    "title":"Posavina",
+    "id":"Posavina",
+    "img":"img/Flags/posavinaFlag.png",
+},
+{
+    "title":"Doboj",
+    "id":"Doboj",
+    "img":"img/Flags/DobojFlag.png",
+},
+{
+    "title":"Banja Luka",
+    "id":"Banja_Luka",
+    "img":"img/Flags/BanjaLukaFlag.gif",
+},
+{
+    "title":"Brčko distrikt",
+    "id":"Brcko_distrikt",
+    "img":"img/BrckoZnak.png",
+},
+{
+    "title":"Bijeljina",
+    "id":"Bijeljina",
+    "img":"img/Flags/BijeljinaFlag.gif",
+},
+{
+    "title":"Vlasenica",
+    "id":"Vlasenica",
+    "img":"img/Flags/VlasenicaFlag.png",
+},
+{
+    "title":"Sarajevo-Romanija",
+    "id":"Sarajevo-Romanija",
+    "img":"",
+},
+{
+    "title":"Foča",
+    "id":"Foca",
+    "img":"img/Flags/FocaFlag.png",
+},
+{
+    "title":"Trenbinje",
+    "id":"Trenbinje",
+    "img":"img/Flags/TrenbinjeFlag.png",
+}
+];
 
 $(function () {
     $('svg').hide();
@@ -87,9 +180,17 @@ $(function () {
         $('svg').toggle();
     });
 
-    $('svg .kraj').mouseover(function () {
+    /* Pop up name of a canton */
+    $('svg .kraj').click(function () {
         styles = $(this).css('fill');
+        $('svg .kraj').css('fill',styles);
+        let canton = cantons.find(item => {
+            return item.id === this.id
+        });
         $(this).css('fill', 'white');
+
+        $('#canton p').text(canton.title);
+        $('#canton img').attr('src',canton.img);
     });
 
     /* Show info about sights */
@@ -105,7 +206,7 @@ $(function () {
         $('#info img').attr('style','width: 100%;');
         $('#info img').attr('src', sight.img);
     });
-    $('svg path').mouseout(function () {
+    $('svg .triangle').mouseout(function () {
         $(this).css('fill', styles);
     });
 

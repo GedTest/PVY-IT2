@@ -109,7 +109,10 @@ $(function () {
     });
 
     $('img.sipka').mouseover(function(){
-        $('img.sipka').slideUp();
+        $(this).animate({height: '200px'},150);
+    });
+    $('img.sipka').mouseout(function(){
+        $(this).animate({height: '175px'},150);
     });
     
     /* Show interactive map */
